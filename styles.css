@@ -62,8 +62,8 @@ body {
 }
 
 .front-image {
-    width: 50px;  /* Tamaño de la imagen */
-    height: 50px; /* Tamaño de la imagen */
+    width: 90px;  /* Tamaño de la imagen */
+    height: 90px; /* Tamaño de la imagen */
     position: absolute;
     top: 10px;
     left: 10px;
