@@ -33,8 +33,10 @@ noButton.addEventListener("click", function() {
 // Función para mostrar el pop-up cuando se hace clic en "Sí"
 yesButton.addEventListener("click", function() {
     // Mostrar el pop-up
-    popup.style.display = "flex";
-    
+    setTimeout(function() {
+        popup.style.display = "flex";  // Mostrar el pop-up después de que la carta se haya rotado
+    }, 500); // Ajusta el tiempo si es necesario (500ms por ejemplo)
+
     // Restaurar tamaño del botón "No" y texto
     noButton.style.transform = "scale(1)"; // Restaurar tamaño original
     noButton.innerText = "No"; // Restaurar texto original
@@ -42,6 +44,7 @@ yesButton.addEventListener("click", function() {
     // Restaurar tamaño del botón "Sí"
     yesButton.style.transform = "scale(1)"; // Restaurar tamaño original
 });
+
 
 // Función para cerrar el pop-up cuando se hace clic en "Cerrar"
 closePopupButton.addEventListener("click", function() {
