@@ -1,11 +1,13 @@
-// Variables para los botones
+// Obtener los botones
 const yesButton = document.getElementById("yes-button");
 const noButton = document.getElementById("no-button");
+const popup = document.getElementById("popup");
+const closePopupButton = document.getElementById("close-popup");
 
 // Contador para el número de clics en el botón "No"
 let noClickCount = 0;
 
-// Función para manejar el clic en el botón "No"
+// Función para manejar el clic en el botón "No" (Reducir tamaño)
 noButton.addEventListener("click", function() {
     // Cambiar tamaño del botón "No"
     if (noClickCount < 4) {
@@ -28,15 +30,17 @@ noButton.addEventListener("click", function() {
     yesButton.style.transform = "scale(1.2)"; // Hacerlo más grande
 });
 
-// Obtener los elementos por ID
-const yesButton = document.getElementById("yes-button");
-const popup = document.getElementById("popup");
-const closePopupButton = document.getElementById("close-popup");
-
-// Función para mostrar el pop-up al hacer clic en "Sí"
+// Función para mostrar el pop-up cuando se hace clic en "Sí"
 yesButton.addEventListener("click", function() {
     // Mostrar el pop-up
     popup.style.display = "flex";
+    
+    // Restaurar tamaño del botón "No" y texto
+    noButton.style.transform = "scale(1)"; // Restaurar tamaño original
+    noButton.innerText = "No"; // Restaurar texto original
+
+    // Restaurar tamaño del botón "Sí"
+    yesButton.style.transform = "scale(1)"; // Restaurar tamaño original
 });
 
 // Función para cerrar el pop-up cuando se hace clic en "Cerrar"
@@ -44,4 +48,3 @@ closePopupButton.addEventListener("click", function() {
     // Ocultar el pop-up
     popup.style.display = "none";
 });
-
