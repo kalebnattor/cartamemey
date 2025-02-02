@@ -11,6 +11,7 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Evitar scroll de la página */
 }
 
 .envelope {
@@ -24,6 +25,9 @@ body {
     transform-style: preserve-3d;
     transition: transform 1s;
     transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .envelope:hover .envelope-inner {
