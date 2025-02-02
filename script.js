@@ -28,17 +28,7 @@ noButton.addEventListener("click", function() {
     yesButton.style.transform = "scale(1.2)"; // Hacerlo más grande
 });
 
-// Función para restaurar el tamaño de los botones si se hace clic en el botón "Sí"
-yesButton.addEventListener("click", function() {
-    // Restaurar tamaño del botón "No" cuando se hace clic en "Sí"
-    noButton.style.transform = "scale(1)"; // Restaurar al tamaño original
-    noButton.innerText = "No"; // Restaurar texto original
-
-    // Restaurar tamaño del botón "Sí"
-    yesButton.style.transform = "scale(1)"; // Restaurar tamaño original
-});
-
-// Obtener el botón de "Sí", el pop-up y el botón de cerrar
+// Obtener los elementos por ID
 const yesButton = document.getElementById("yes-button");
 const popup = document.getElementById("popup");
 const closePopupButton = document.getElementById("close-popup");
