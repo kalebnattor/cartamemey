@@ -182,6 +182,10 @@ body {
     display: inline-block;
 }
 
+.popup-content.flip {
+    transform: rotate(180deg); /* Voltear el texto */
+}
+
 /* Estilo del botón de cerrar */
 #close-popup {
     background-color: #FF6347; /* Rojo tomate */
