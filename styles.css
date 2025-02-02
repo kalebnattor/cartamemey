@@ -139,7 +139,7 @@ body {
     box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
-/* Estilo general del pop-up */
+/* Asegúrate de que el pop-up tenga un z-index alto, por encima de la carta */
 .popup {
     display: none; /* El pop-up está oculto por defecto */
     position: fixed;
@@ -153,17 +153,18 @@ body {
     z-index: 2000; /* Asegura que el pop-up esté por encima de todo */
 }
 
-/* Contenido del pop-up */
+/* Estilo del contenido del pop-up */
 .popup-content {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 80%; /* Ajusta el ancho del pop-up */
-    max-width: 400px; /* Limita el tamaño en pantallas grandes */
+    width: 80%; /* Ajusta el tamaño */
+    max-width: 400px;
     font-family: 'Poppins', sans-serif;
-    z-index: 2001; /* Asegura que el contenido del pop-up también esté por encima */
+    z-index: 2001;
 }
+
 
 /* Estilo del texto */
 .popup-content p {
