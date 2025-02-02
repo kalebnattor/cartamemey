@@ -25,29 +25,28 @@ noButton.addEventListener("click", function() {
     yesButton.style.transform = "scale(1.2)";
 });
 
-// Función para mostrar el pop-up cuando se hace clic en "Sí"
-yesButton.addEventListener("click", function() {
-    setTimeout(function() {
-        // Mostrar el pop-up
-        popup.style.display = "flex";
-    }, 500); // Espera medio segundo
-
     // Restaurar tamaños y texto de los botones
     noButton.style.transform = "scale(1)";
     noButton.innerText = "No";
     yesButton.style.transform = "scale(1)";
 });
 
-// Cerrar el pop-up cuando se hace clic en "Cerrar"
+yesButton.addEventListener("click", function() {
+    // Mostrar el pop-up
+    popup.style.display = "flex";
+    // Rotar la carta hacia atrás
+    card.style.transform = "rotateY(180deg)";
+});
+
+// Función para cerrar el pop-up
 closePopupButton.addEventListener("click", function() {
     popup.style.display = "none";
 });
 
-// Agregar un evento de transición para cerrar el pop-up cuando la carta vuelva al frente
+// Detectar cuando la carta regresa a la parte delantera
 card.addEventListener('transitionend', function() {
-    // Verificamos si la carta está en la parte delantera
     if (card.style.transform === 'rotateY(0deg)') {
-        // Cerrar el pop-up cuando la carta vuelva al frente
+        // Cerrar el pop-up cuando la carta regresa al frente
         popup.style.display = "none";
     }
 });
