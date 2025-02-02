@@ -228,25 +228,3 @@ body {
         padding: 8px 16px;
     }
 }
-
-
-/* Estilo para teléfonos */
-@media (max-width: 768px) {
-    .popup-content {
-        width: 90%; /* Hacemos el pop-up más pequeño en pantallas móviles */
-        padding: 15px;
-    }
-
-    .popup-content p {
-        font-size: 16px; /* Reducimos el tamaño del texto */
-    }
-
-    .popup-content a {
-        font-size: 14px; /* Reducimos el tamaño del enlace */
-    }
-
-    #close-popup {
-        font-size: 14px; /* Reducimos el tamaño del botón */
-        padding: 8px 16px;
-    }
-}
