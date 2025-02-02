@@ -1,13 +1,12 @@
-// Obtener los elementos
 const yesButton = document.getElementById("yes-button");
 const noButton = document.getElementById("no-button");
 const popup = document.getElementById("popup");
 const closePopupButton = document.getElementById("close-popup");
-const card = document.getElementById("card"); // Asumimos que la carta tiene el ID 'card'
+const card = document.getElementById("card"); 
 
-// Función para manejar el clic en el botón "No" (Reducir tamaño)
-let noClickCount = 0;
+let noClickCount = 0; 
 
+// Función para reducir tamaño del botón "No" y cambiar su texto
 noButton.addEventListener("click", function() {
     if (noClickCount < 4) {
         noButton.style.transform = `scale(${1 - (0.1 * noClickCount)})`;
@@ -18,7 +17,7 @@ noButton.addEventListener("click", function() {
     } else if (noClickCount === 2) {
         noButton.innerText = "¿Segura?";
     } else if (noClickCount === 3) {
-        noButton.innerText = "¿Muy segurísima?";
+        noButton.innerText = "Muy segurísima";
     } else if (noClickCount === 4) {
         noButton.innerText = "Yo sabía que no me querías...";
     }
@@ -44,10 +43,11 @@ closePopupButton.addEventListener("click", function() {
     popup.style.display = "none";
 });
 
-// Detectar cuando la carta vuelve a la parte delantera y cerrar el pop-up
+// Agregar un evento de transición para cerrar el pop-up cuando la carta vuelva al frente
 card.addEventListener('transitionend', function() {
+    // Verificamos si la carta está en la parte delantera
     if (card.style.transform === 'rotateY(0deg)') {
-        // Cuando la carta está de nuevo en la parte delantera, cerramos el pop-up
+        // Cerrar el pop-up cuando la carta vuelva al frente
         popup.style.display = "none";
     }
 });
