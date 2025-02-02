@@ -29,16 +29,20 @@ noButton.addEventListener("click", function() {
     yesButton.style.transform = "scale(1.2)";
 });
 
-// Mostrar el pop-up cuando se hace clic en "Sí"
-yesButton.addEventListener("click", function() {
+// Ocultar el pop-up al inicio
+    popup.style.display = "none";
+
+   yesButton.addEventListener("click", function() {
     popup.style.display = "flex";
     card.style.transform = "rotateY(180deg)"; // Girar la carta hacia la parte trasera
 });
 
-// Cerrar el pop-up cuando se hace clic en "Cerrar"
-closePopupButton.addEventListener("click", function() {
-    popup.style.display = "none";
-});
+    // Cerrar pop-up cuando se toca fuera de la caja o en el botón de cerrar
+    popup.addEventListener("click", function (event) {
+        if (event.target === popup || event.target === closePopupButton) {
+            popup.style.display = "none";
+        }
+    });
 
 // Voltear el texto del pop-up cuando se hace clic o toca en cualquier lugar del pop-up
 popup.addEventListener("click", function() {
