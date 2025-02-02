@@ -1,21 +1,18 @@
-// Obtener los botones
+// Obtener los elementos
 const yesButton = document.getElementById("yes-button");
 const noButton = document.getElementById("no-button");
 const popup = document.getElementById("popup");
 const closePopupButton = document.getElementById("close-popup");
-
-// Contador para el número de clics en el botón "No"
-let noClickCount = 0;
+const card = document.getElementById("card"); // Asumimos que la carta tiene el ID 'card'
 
 // Función para manejar el clic en el botón "No" (Reducir tamaño)
+let noClickCount = 0;
+
 noButton.addEventListener("click", function() {
-    // Cambiar tamaño del botón "No"
     if (noClickCount < 4) {
-        noButton.style.transform = `scale(${1 - (0.1 * noClickCount)})`; // Reducir tamaño
+        noButton.style.transform = `scale(${1 - (0.1 * noClickCount)})`;
         noClickCount++;
     }
-
-    // Cambiar el texto del botón "No"
     if (noClickCount === 1) {
         noButton.innerText = "¿Por qué le das no?";
     } else if (noClickCount === 2) {
@@ -26,28 +23,31 @@ noButton.addEventListener("click", function() {
         noButton.innerText = "Yo sabía que no me querías...";
     }
 
-    // Hacer crecer el botón "Sí"
-    yesButton.style.transform = "scale(1.2)"; // Hacerlo más grande
+    yesButton.style.transform = "scale(1.2)";
 });
 
 // Función para mostrar el pop-up cuando se hace clic en "Sí"
 yesButton.addEventListener("click", function() {
-    // Mostrar el pop-up
     setTimeout(function() {
-        popup.style.display = "flex";  // Mostrar el pop-up después de que la carta se haya rotado
-    }, 500); // Ajusta el tiempo si es necesario (500ms por ejemplo)
+        // Mostrar el pop-up
+        popup.style.display = "flex";
+    }, 500); // Espera medio segundo
 
-    // Restaurar tamaño del botón "No" y texto
-    noButton.style.transform = "scale(1)"; // Restaurar tamaño original
-    noButton.innerText = "No"; // Restaurar texto original
-
-    // Restaurar tamaño del botón "Sí"
-    yesButton.style.transform = "scale(1)"; // Restaurar tamaño original
+    // Restaurar tamaños y texto de los botones
+    noButton.style.transform = "scale(1)";
+    noButton.innerText = "No";
+    yesButton.style.transform = "scale(1)";
 });
 
-
-// Función para cerrar el pop-up cuando se hace clic en "Cerrar"
+// Cerrar el pop-up cuando se hace clic en "Cerrar"
 closePopupButton.addEventListener("click", function() {
-    // Ocultar el pop-up
     popup.style.display = "none";
+});
+
+// Detectar cuando la carta vuelve a la parte delantera y cerrar el pop-up
+card.addEventListener('transitionend', function() {
+    if (card.style.transform === 'rotateY(0deg)') {
+        // Cuando la carta está de nuevo en la parte delantera, cerramos el pop-up
+        popup.style.display = "none";
+    }
 });
