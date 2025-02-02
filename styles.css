@@ -133,28 +133,10 @@ body {
 
 /* Estilos para pantallas grandes */
 .letter {
-    max-height: 500px;
-    overflow-y: auto;
+    max-height: 300px; /* Establece una altura máxima */
+    overflow-y: auto;  /* Habilita el scroll vertical si el contenido excede la altura */
+    padding: 20px; /* Agrega un poco de espacio alrededor del texto */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
-/* Estilos para dispositivos móviles */
-@media (max-width: 768px) {
-    .letter {
-        max-height: 250px; /* Ajustamos la altura en pantallas más pequeñas */
-    }
-
-    .back-image {
-        width: 100%; /* Hacemos que la imagen se ajuste al 100% en pantallas pequeñas */
-    }
-
-    .button {
-        font-size: 14px; /* Hacemos los botones un poco más pequeños */
-        padding: 8px 16px;
-    }
-
-    /* Ajustamos el tamaño de la carta para que no sobresalga de la pantalla */
-    .envelope-back {
-        max-width: 90%; /* 90% del ancho de la pantalla */
-        margin: 0 auto; /* Centra la carta */
-    }
 }
