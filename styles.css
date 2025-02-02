@@ -155,7 +155,7 @@ body {
 
 .popup-content {
     background-color: white;
-    padding: 30px; /* Aumentamos el espacio interno */
+    padding: 60px; /* Aumentamos el espacio interno */
     border-radius: 10px;
     font-size: 20px;
     text-align: center;
