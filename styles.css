@@ -156,13 +156,18 @@ body {
 /* Estilo del contenido del pop-up */
 .popup-content {
     background-color: white;
-    padding: 20px;
+    padding: 20px; /* Agrega espacio interno */
     border-radius: 10px;
+    font-size: 18px;
     text-align: center;
-    width: 80%; /* Ajusta el tamaño */
+    width: 80%;
     max-width: 400px;
-    font-family: 'Poppins', sans-serif;
-    z-index: 2001;
+    transition: transform 0.5s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega sombra para mejor apariencia */
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido se alinee verticalmente */
+    align-items: center; /* Centra el contenido dentro del pop-up */
+    justify-content: center;
 }
 
 
