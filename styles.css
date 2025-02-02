@@ -155,19 +155,23 @@ body {
 
 .popup-content {
     background-color: white;
-    padding: 60px;
+    padding: 30px;
     border-radius: 10px;
     font-size: 20px;
     text-align: center;
-    width: 90%;
-    max-width: 500px;
+    width: 95%; /* Asegura que el pop-up tenga más espacio en móviles */
+    max-width: 500px; /* Máximo tamaño en pantallas grandes */
+    min-width: 320px; /* Evita que sea demasiado angosto */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra todos los elementos internos */
+    align-items: center;
     justify-content: center;
     position: relative;
 }
+
+
+
 
 
 
@@ -205,12 +209,11 @@ body {
     font-size: 16px;
 }
 
-/* Estilo para teléfonos */
-@media (max-width: 768px) {
+/* Asegurar que en pantallas pequeñas se mantenga centrado */
+@media (max-width: 480px) {
     .popup-content {
-        width: 90%; /* Hacemos el pop-up más pequeño en pantallas móviles */
-        padding: 15px;
-    }
+        width: 90%; /* Usa el 90% del ancho en teléfonos pequeños */
+        min-width: unset; /* Elimina la restricción mínima si es necesario */
 
     .popup-content p {
         font-size: 16px; /* Reducimos el tamaño del texto */
