@@ -8,17 +8,19 @@ let noClickCount = 0;
 // Función para manejar el clic en el botón "No"
 noButton.addEventListener("click", function() {
     // Cambiar tamaño del botón "No"
-    if (noClickCount < 3) {
+    if (noClickCount < 4) {
         noButton.style.transform = `scale(${1 - (0.1 * noClickCount)})`; // Reducir tamaño
         noClickCount++;
     }
 
     // Cambiar el texto del botón "No"
     if (noClickCount === 1) {
-        noButton.innerText = "¿Segura?";
+        noButton.innerText = "¿Por qué le das no?";
     } else if (noClickCount === 2) {
-        noButton.innerText = "Muy segurísima";
+        noButton.innerText = "¿Segura?";
     } else if (noClickCount === 3) {
+        noButton.innerText = "¿Muy segurísima?";
+    } else if (noClickCount === 4) {
         noButton.innerText = "Yo sabía que no me querías...";
     }
 
