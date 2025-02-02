@@ -37,3 +37,21 @@ yesButton.addEventListener("click", function() {
     // Restaurar tamaño del botón "Sí"
     yesButton.style.transform = "scale(1)"; // Restaurar tamaño original
 });
+
+// Obtener el botón de "Sí", el pop-up y el botón de cerrar
+const yesButton = document.getElementById("yes-button");
+const popup = document.getElementById("popup");
+const closePopupButton = document.getElementById("close-popup");
+
+// Función para mostrar el pop-up al hacer clic en "Sí"
+yesButton.addEventListener("click", function() {
+    // Mostrar el pop-up
+    popup.style.display = "flex";
+});
+
+// Función para cerrar el pop-up cuando se hace clic en "Cerrar"
+closePopupButton.addEventListener("click", function() {
+    // Ocultar el pop-up
+    popup.style.display = "none";
+});
+
