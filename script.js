@@ -4,6 +4,10 @@ const popup = document.getElementById("popup");
 const closePopupButton = document.getElementById("close-popup");
 const card = document.getElementById("card"); 
 
+// Variables para el deslizamiento
+let startX = 0;
+let isTouching = false;
+
 let noClickCount = 0; 
 
 // Función para reducir tamaño del botón "No" y cambiar su texto
@@ -43,11 +47,30 @@ closePopupButton.addEventListener("click", function() {
     popup.style.display = "none";
 });
 
-// Agregar un evento de transición para cerrar el pop-up cuando la carta vuelva al frente
-card.addEventListener('transitionend', function() {
-    // Verificamos si la carta está en la parte delantera
-    if (card.style.transform === 'rotateY(0deg)') {
-        // Cerrar el pop-up cuando la carta vuelva al frente
-        popup.style.display = "none";
+// Funciones de deslizamiento
+card.addEventListener("touchstart", function(e) {
+    isTouching = true;
+    startX = e.touches[0].clientX;
+});
+
+card.addEventListener("touchmove", function(e) {
+    if (isTouching) {
+        let deltaX = e.touches[0].clientX - startX;
+        if (Math.abs(deltaX) > 50) { // Se ha deslizado lo suficiente
+            if (deltaX > 0) {
+                // Deslizar hacia la derecha
+                card.style.transform = "rotateY(0deg)"; // Vuelve a la parte delantera
+                popup.style.display = "none"; // Cierra el pop-up al regresar
+            } else {
+                // Deslizar hacia la izquierda
+                card.style.transform = "rotateY(180deg)"; // Regresa a la parte trasera
+                popup.style.display = "flex"; // Muestra el pop-up
+            }
+            isTouching = false; // Detener el movimiento una vez que se deslizó
+        }
     }
+});
+
+card.addEventListener("touchend", function() {
+    isTouching = false;
 });
