@@ -150,7 +150,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Asegura que el pop-up esté sobre todo */
+    z-index: 2000; /* Asegura que el pop-up esté por encima de todo */
 }
 
 /* Contenido del pop-up */
@@ -162,6 +162,7 @@ body {
     width: 80%; /* Ajusta el ancho del pop-up */
     max-width: 400px; /* Limita el tamaño en pantallas grandes */
     font-family: 'Poppins', sans-serif;
+    z-index: 2001; /* Asegura que el contenido del pop-up también esté por encima */
 }
 
 /* Estilo del texto */
@@ -190,6 +191,28 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
+
+/* Estilo para teléfonos */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%; /* Hacemos el pop-up más pequeño en pantallas móviles */
+        padding: 15px;
+    }
+
+    .popup-content p {
+        font-size: 16px; /* Reducimos el tamaño del texto */
+    }
+
+    .popup-content a {
+        font-size: 14px; /* Reducimos el tamaño del enlace */
+    }
+
+    #close-popup {
+        font-size: 14px; /* Reducimos el tamaño del botón */
+        padding: 8px 16px;
+    }
+}
+
 
 /* Estilo para teléfonos */
 @media (max-width: 768px) {
