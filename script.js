@@ -29,17 +29,10 @@ noButton.addEventListener("click", function() {
     yesButton.style.transform = "scale(1.2)";
 });
 
-// Función para mostrar el pop-up cuando se hace clic en "Sí"
+// Mostrar el pop-up cuando se hace clic en "Sí"
 yesButton.addEventListener("click", function() {
-    setTimeout(function() {
-        // Mostrar el pop-up
-        popup.style.display = "flex";
-    }, 500); // Espera medio segundo
-
-    // Restaurar tamaños y texto de los botones
-    noButton.style.transform = "scale(1)";
-    noButton.innerText = "No";
-    yesButton.style.transform = "scale(1)";
+    popup.style.display = "flex";
+    card.style.transform = "rotateY(180deg)"; // Girar la carta hacia la parte trasera
 });
 
 // Cerrar el pop-up cuando se hace clic en "Cerrar"
@@ -47,30 +40,7 @@ closePopupButton.addEventListener("click", function() {
     popup.style.display = "none";
 });
 
-// Funciones de deslizamiento
-card.addEventListener("touchstart", function(e) {
-    isTouching = true;
-    startX = e.touches[0].clientX;
-});
-
-card.addEventListener("touchmove", function(e) {
-    if (isTouching) {
-        let deltaX = e.touches[0].clientX - startX;
-        if (Math.abs(deltaX) > 50) { // Se ha deslizado lo suficiente
-            if (deltaX > 0) {
-                // Deslizar hacia la derecha
-                card.style.transform = "rotateY(0deg)"; // Vuelve a la parte delantera
-                popup.style.display = "none"; // Cierra el pop-up al regresar
-            } else {
-                // Deslizar hacia la izquierda
-                card.style.transform = "rotateY(180deg)"; // Regresa a la parte trasera
-                popup.style.display = "flex"; // Muestra el pop-up
-            }
-            isTouching = false; // Detener el movimiento una vez que se deslizó
-        }
-    }
-});
-
-card.addEventListener("touchend", function() {
-    isTouching = false;
+// Voltear el texto del pop-up cuando se hace clic o toca en cualquier lugar del pop-up
+popup.addEventListener("click", function() {
+    popupContent.classList.toggle("flip"); // Añadir o quitar la clase 'flip' para voltear el texto
 });
