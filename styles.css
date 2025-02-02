@@ -140,7 +140,7 @@ body {
 }
 
 .popup {
-    display: none; /* Se oculta al inicio */
+    display: none; /* 🔹 Se oculta al inicio */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -152,7 +152,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    padding: 20px; /* Asegura que el contenido tenga espacio en móviles */
+    padding: 20px; 
     box-sizing: border-box;
 }
 
