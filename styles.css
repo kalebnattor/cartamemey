@@ -153,22 +153,22 @@ body {
     z-index: 2000; /* Asegura que el pop-up esté por encima de todo */
 }
 
-/* Estilo del contenido del pop-up */
 .popup-content {
     background-color: white;
-    padding: 20px; /* Agrega espacio interno */
+    padding: 30px; /* Aumentamos el espacio interno */
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
-    width: 80%;
-    max-width: 400px;
+    width: 90%; /* Aumentamos el ancho en pantallas pequeñas */
+    max-width: 500px; /* Hacemos la caja más ancha */
     transition: transform 0.5s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega sombra para mejor apariencia */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Mejora la sombra */
     display: flex;
-    flex-direction: column; /* Asegura que el contenido se alinee verticalmente */
-    align-items: center; /* Centra el contenido dentro del pop-up */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
+
 
 
 /* Estilo del texto */
