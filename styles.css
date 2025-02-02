@@ -161,10 +161,10 @@ body {
     padding: 30px;
     border-radius: 10px;
     font-size: 20px;
-     text-align: center;
-    width: 90%; /* Usa el 90% del ancho en todas las pantallas */
-    max-width: 500px; /* Limita el tamaño máximo en PC */
-    min-width: 280px; /* Evita que sea demasiado angosto en teléfonos */
+    text-align: center;
+    width: 90%; /* 🔹 Que ocupe casi todo el ancho sin ser demasiado delgado */
+    max-width: 500px; /* 🔹 En pantallas grandes, se mantiene un tamaño adecuado */
+    min-width: 300px; /* 🔹 Evita que sea demasiado delgado en móviles */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
@@ -172,14 +172,6 @@ body {
     justify-content: center;
     position: relative;
 }
-
-
-
-
-
-
-
-
 
 /* Estilo del texto */
 .popup-content p {
@@ -212,12 +204,14 @@ body {
     font-size: 16px;
 }
 
-/* Asegurar que en pantallas pequeñas se mantenga centrado */
+/* Ajuste especial para móviles */
 @media (max-width: 480px) {
     .popup-content {
-        width: 90%; /* Usa el 90% del ancho en teléfonos pequeños */
-        padding: 20px; /* Asegura que el texto tenga espacio */
-
+        width: 95%; /* 🔹 Se ajusta mejor en móviles */
+        padding: 20px; /* 🔹 Agregamos espacio interno */
+        min-width: unset; /* 🔹 Eliminamos restricciones si son necesarias */
+    }
+    
     .popup-content p {
         font-size: 16px; /* Reducimos el tamaño del texto */
     }
