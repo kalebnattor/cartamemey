@@ -10,6 +10,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .envelope {
@@ -22,6 +23,7 @@ body {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
+    transform-origin: center;
 }
 
 .envelope:hover .envelope-inner {
@@ -37,7 +39,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .envelope-front {
@@ -46,6 +48,7 @@ body {
     text-align: center;
     padding: 20px;
     position: relative;
+    font-weight: bold; /* Fuente en negrita en la parte del frente */
 }
 
 .front-content {
@@ -70,6 +73,10 @@ body {
     text-align: center;
     width: auto;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .letter p {
@@ -79,3 +86,35 @@ body {
     text-align: left;
 }
 
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-yes {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+.button-yes:hover {
+    background-color: #45a049;
+}
+
+.button-no {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+.button-no:hover {
+    background-color: #e53935;
+}
