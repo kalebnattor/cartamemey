@@ -47,23 +47,3 @@ noButton.addEventListener("click", function() {
 popup.addEventListener("click", function() {
     popupContent.classList.toggle("flip"); // Añadir o quitar la clase 'flip' para voltear el texto
 });
-function onYouTubeIframeAPIReady() {
-    let player = new YT.Player("player", {
-        height: "0",
-        width: "0",
-        videoId: "IPiA2ljRhvo",
-        playerVars: {
-            autoplay: 1,
-            loop: 1,
-            playlist: "IPiA2ljRhvo"
-        },
-        events: {
-            "onReady": function (event) {
-                event.target.playVideo();
-            }
-        }
-    });
-}
-
-});
-
