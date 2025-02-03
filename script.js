@@ -3,7 +3,6 @@ const noButton = document.getElementById("no-button");
 const popup = document.getElementById("popup");
 const closePopupButton = document.getElementById("close-popup");
 const card = document.getElementById("card"); 
-document.addEventListener("DOMContentLoaded", function () {
 // Variables para el deslizamiento
 let startX = 0;
 let isTouching = false;
@@ -48,15 +47,23 @@ noButton.addEventListener("click", function() {
 popup.addEventListener("click", function() {
     popupContent.classList.toggle("flip"); // Añadir o quitar la clase 'flip' para voltear el texto
 });
-    // Crear un iframe para el audio de YouTube
-    let iframe = document.createElement("iframe");
-    iframe.setAttribute("width", "0");
-    iframe.setAttribute("height", "0");
-    iframe.setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1&playlist=dQw4w9WgXcQ");
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("allow", "autoplay");
+function onYouTubeIframeAPIReady() {
+    let player = new YT.Player("player", {
+        height: "0",
+        width: "0",
+        videoId: "dQw4w9WgXcQ",
+        playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: "dQw4w9WgXcQ"
+        },
+        events: {
+            "onReady": function (event) {
+                event.target.playVideo();
+            }
+        }
+    });
+}
 
-    // Agregar el iframe al body
-    document.body.appendChild(iframe);
 });
 
